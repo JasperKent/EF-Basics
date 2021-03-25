@@ -1,0 +1,25 @@
+﻿@model IEnumerable<Owner>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<section>
+    <h1 class="display-4">Pet Data</h1>
+    @foreach (var owner in Model)
+    {
+        <section>
+            <b>@owner</b>
+        </section>
+        <section style="margin: 0 0 10px 20px">
+            @if (owner.Pets != null)
+            {
+            foreach (var pet in owner.Pets)
+            {
+                <article>@pet</article>
+            }
+            }
+        </section>
+    }
+</section>
+    
